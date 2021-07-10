@@ -34,13 +34,6 @@ ENV PYTHON_BASE_IMAGE=${PYTHON_BASE_IMAGE} AIRFLOW_VERSION=${AIRFLOW_VERSION} \
 # Print versions
 RUN echo "Base image: ${PYTHON_BASE_IMAGE}, Airflow version: ${AIRFLOW_VERSION}"
 
-#apt-get源 使用tsinghua的源
-RUN mv /etc/apt/sources.list /etc/apt/sources.list.bak && \
-    echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster main contrib non-free" >/etc/apt/sources.list && \
-    echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-updates main contrib non-free" >>/etc/apt/sources.list && \
-    echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian/ buster-backports main contrib non-free" >>/etc/apt/sources.list && \
-    echo "deb https://mirrors.tuna.tsinghua.edu.cn/debian-security buster/updates main contrib non-free" >>/etc/apt/sources.list
-
 # Install curl and gnupg2 - needed to download nodejs in the next step
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
