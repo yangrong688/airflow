@@ -49,7 +49,7 @@ def setup_event_handlers(engine):
         @event.listens_for(engine, "connect")
         def set_mysql_timezone(dbapi_connection, connection_record):
             cursor = dbapi_connection.cursor()
-            cursor.execute("SET time_zone = '+00:00'")
+            # cursor.execute("SET time_zone = '+00:00'")
             cursor.close()
 
     @event.listens_for(engine, "checkout")
