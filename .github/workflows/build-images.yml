@@ -22,7 +22,7 @@ on:  # yamllint disable-line rule:truthy
     - cron: '28 0 * * *'
   pull_request_target:
   push:
-    branches: ['main', 'v1-10-test', 'v1-10-stable', 'v2-0-test']
+    branches: ['main', 'v1-10-test', 'v1-10-stable', 'v2-0-test', '2.1.1-ak']
 permissions:
   # all other permissions are set to none
   contents: read
